@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container" style="padding-top:45px;padding-bottom:45px;">
+    <div class="card mb-5" style="max-width: 50rem;">
+        <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content }}</p>
+            <a href="{% url 'delete' post.id %}" class="btn btn-danger" onclick="return confirm('Ok to delete?')">Delete</a>
+            <a href="{% url 'update' post.id %}" class="btn btn-secondary">Update</a>
+        </div>
+    </div>
+    </div>
+{% endblock %}
