@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 
 
+
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=100, label="Username")
     password = forms.CharField(max_length=100, label="Password",widget=forms.PasswordInput)
@@ -16,3 +17,4 @@ class LoginForm(forms.Form):
             if not user:
                 raise forms.ValidationError("Username or Password not correct!")
         return super(LoginForm, self).clean()
+    
